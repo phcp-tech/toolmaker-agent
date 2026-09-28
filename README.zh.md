@@ -200,7 +200,8 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 | 鉴权/策略 | [Casbin](https://github.com/apache/casbin) |
 | CLI | [Cobra](https://github.com/spf13/cobra) |
 | 前端 | React 19、TypeScript、Vite |
-| 前端状态管理 | [TanStack Query](https://tanstack.com/query) v5 |
+| 前端模板 |https://github.com/phcp-tech/common-template-react|
+| 前端状态管理 |[TanStack Query](https://tanstack.com/query) v5 |
 | 前端路由 | react-router-dom v7 |
 | 样式 | Tailwind CSS |
 | 图表 | [Mermaid](https://mermaid.js.org/)（部分高级图表类型还用到 Cytoscape、KaTeX） |
@@ -208,3 +209,11 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 ## 7. 许可证
 
 Apache License 2.0——详见 [LICENSE](./LICENSE)。
+
+## 8. 联系我们
+
+- Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
+- Discord: https://discord.com/invite/jFhTM3df75
+- X: https://x.com/zhishi_io
+- Wechat Accounts: PHCP
+- Email: support@toolmaker.io

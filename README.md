@@ -198,6 +198,7 @@ The recording below is a real Claude Code session issuing MCP tool calls end to 
 | Auth/policy | [Casbin](https://github.com/apache/casbin) |
 | CLI | [Cobra](https://github.com/spf13/cobra) |
 | Frontend | React 19, TypeScript, Vite |
+| Frontend Template |https://github.com/phcp-tech/common-template-react|
 | Frontend state | [TanStack Query](https://tanstack.com/query) v5 |
 | Frontend routing | react-router-dom v7 |
 | Styling | Tailwind CSS |
@@ -206,3 +207,11 @@ The recording below is a real Claude Code session issuing MCP tool calls end to 
 ## 7. License
 
 Apache License 2.0 — see [LICENSE](./LICENSE).
+
+## 8. Contact US
+
+- Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
+- Discord: https://discord.com/invite/jFhTM3df75
+- X: https://x.com/zhishi_io
+- Wechat Accounts: PHCP
+- Email: support@toolmaker.io
