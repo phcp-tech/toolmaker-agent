@@ -100,7 +100,7 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
 
 - **Claude Code**：
   ```
-  claude mcp add --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
+  claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
   ```
 - **Codex**：
   ```
