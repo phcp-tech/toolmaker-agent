@@ -99,7 +99,7 @@ Register the server with an MCP-aware client (For other Code Agents, please conf
 
 - **Claude Code**:
   ```
-  claude mcp add --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
+  claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
   ```
 - **Codex**:
   ```
