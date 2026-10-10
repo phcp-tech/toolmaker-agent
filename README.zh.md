@@ -184,9 +184,11 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 
 ![MCP CRUD 演示](docs/images/mcp-crud-demo.gif)
 
+## 6. 使用限制
 
+目前的版本为 Free Edition，只支持个人在本机使用，适合团队使用的版本正在开发中，随后会发布。
 
-## 6. 技术栈
+## 7. 技术栈
 
 | 层 | 技术 |
 |---|---|
@@ -206,11 +208,11 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 | 样式 | Tailwind CSS |
 | 图表 | [Mermaid](https://mermaid.js.org/)（部分高级图表类型还用到 Cytoscape、KaTeX） |
 
-## 7. 许可证
+## 8. 许可证
 
 Apache License 2.0——详见 [LICENSE](./LICENSE)。
 
-## 8. 联系我们
+## 9. 联系我们
 
 - Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
 - Discord: https://discord.com/invite/jFhTM3df75
