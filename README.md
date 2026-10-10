@@ -184,7 +184,11 @@ The recording below is a real Claude Code session issuing MCP tool calls end to 
 
 ![MCP CRUD demo](docs/images/mcp-crud-demo.gif)
 
-## 6. Tech stack
+## 6. Usage Limitations
+
+The current version is the Free Edition, which supports only individual use on a local machine; a version suitable for teams is currently under development and will be released later.
+
+## 7. Tech stack
 
 | Layer | Technology |
 |---|---|
@@ -204,11 +208,11 @@ The recording below is a real Claude Code session issuing MCP tool calls end to 
 | Styling | Tailwind CSS |
 | Diagrams | [Mermaid](https://mermaid.js.org/) (+ Cytoscape, KaTeX for advanced diagram types) |
 
-## 7. License
+## 8. License
 
 Apache License 2.0 — see [LICENSE](./LICENSE).
 
-## 8. Contact US
+## 9. Contact US
 
 - Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
 - Discord: https://discord.com/invite/jFhTM3df75
