@@ -43,13 +43,13 @@ This is also why the data model itself follows the standard software engineering
   - Pluggable multi-provider configuration — OpenAI, Anthropic, Gemini, DeepSeek, Ollama, LM Studio, Hunyuan, Moonshot AI.
   - SSE-streamed responses.
 
-- **MCP Server** — implemented with the official [MCP SDK](https://github.com/modelcontextprotocol/go-sdk), exposing 20 tools over Streamable HTTP transport, so a coding agent like Claude Code/Codex/DeepSeek Harness can manage the same data straight from the terminal — no confirmation step.
+- **MCP Server** — implemented with the official [MCP SDK](https://github.com/modelcontextprotocol/go-sdk), exposing 48 tools over Streamable HTTP transport, so a coding agent like Claude Code/Codex/DeepSeek Harness can manage the same data straight from the terminal — no confirmation step.
 
 - **RAG / semantic search** — a global search box in the header (searches every product in the org by default) plus a semantic search tool available from both the chat agent and MCP clients, so you can find entities by *meaning* ("find requirements similar to X"), not just exact keyword/OID matches. Every Create/Update asynchronously re-embeds the entity's content.
 
 ## 4. Installation and Configuration
 
-Toolmaker Agent ships as six pre-built, self-contained binaries — one per platform/architecture combination — from the public [phcp-tech/toolmaker-agent](https://github.com/phcp-tech/toolmaker-agent) releases page.
+Toolmaker Agent ships as six pre-built, self-contained binaries — one per platform/architecture combination — from the public page to download: [phcp-tech/toolmaker-agent/releases](https://github.com/phcp-tech/toolmaker-agent/releases).
 
 ### 4.1. Download
 
@@ -61,8 +61,6 @@ Toolmaker Agent ships as six pre-built, self-contained binaries — one per plat
 | Linux | ARM64 | `toolmaker-agent-linux-arm64` |
 | macOS | Intel | `toolmaker-agent-darwin-amd64` |
 | macOS | Apple Silicon | `toolmaker-agent-darwin-arm64` |
-
-Grab the one matching your machine from the [Releases](https://github.com/phcp-tech/toolmaker-agent/releases) page.
 
 ### 4.2. Install and run
 
@@ -219,3 +217,13 @@ Apache License 2.0 — see [LICENSE](./LICENSE).
 - X: https://x.com/zhishi_io
 - Wechat Accounts: PHCP
 - Email: support@toolmaker.io
+
+## 10. Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=phcp-tech/toolmaker-agent&type=Date)](https://star-history.com/#phcp-tech/toolmaker-agent&Date)
+
+## 11. Release Downloads
+
+[![Downloads](https://img.shields.io/github/downloads/phcp-tech/toolmaker-agent/total?label=total%20downloads)](https://github.com/phcp-tech/toolmaker-agent/releases) [![Latest release downloads](https://img.shields.io/github/downloads/phcp-tech/toolmaker-agent/latest/total?label=latest%20release)](https://github.com/phcp-tech/toolmaker-agent/releases/latest)
+
+Cumulative download count of all release assets on GitHub.

@@ -44,13 +44,13 @@ Toolmaker Agent 是一个 Agentic AI SDLC 平台——人类与智能体基于�
   - 可插拔的多供应商配置——OpenAI、Anthropic、Gemini、DeepSeek、Ollama、LM Studio、混元（Hunyuan）、Moonshot AI。
   - SSE 流式响应。
 
-- **MCP 服务端**——使用官方的 [MCP SDK](https://github.com/modelcontextprotocol/go-sdk) 实现，以 Streamable HTTP transport 暴露 20 个工具，让 Claude Code/Codex/DeepSeek Harness 这样的编码智能体可以直接在终端里管理同一份数据——不需要确认这一步。
+- **MCP 服务端**——使用官方的 [MCP SDK](https://github.com/modelcontextprotocol/go-sdk) 实现，以 Streamable HTTP transport 暴露 48 个工具，让 Claude Code/Codex/DeepSeek Harness 这样的编码智能体可以直接在终端里管理同一份数据——不需要确认这一步。
 
 - **RAG / 语义检索**——页头的全局搜索框（默认搜索整个组织下的所有产品），以及一个对话智能体和 MCP 客户端都能用的语义搜索工具，可以按*语义*（"查找和 X 相似的需求"）而不仅仅是精确关键词/OID 匹配来查找实体。每次创建/更新都会异步重新生成该实体内容的向量。
 
 ## 4. 安装与配置
 
-Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每个平台/架构组合各一份——托管在公开仓库 [phcp-tech/toolmaker-agent](https://github.com/phcp-tech/toolmaker-agent) 的 Releases 页面。
+Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每个平台/架构组合各一份——托管在公开仓库, 请在此下载：[phcp-tech/toolmaker-agent/releases](https://github.com/phcp-tech/toolmaker-agent/releases)。
 
 ### 4.1. 下载
 
@@ -62,8 +62,6 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
 | Linux | ARM64 | `toolmaker-agent-linux-arm64` |
 | macOS | Intel | `toolmaker-agent-darwin-amd64` |
 | macOS | Apple Silicon（M 系列芯片） | `toolmaker-agent-darwin-arm64` |
-
-去 [Releases](https://github.com/phcp-tech/toolmaker-agent/releases) 页面下载跟自己机器匹配的那一份。
 
 ### 4.2. 安装与启动
 
@@ -99,22 +97,22 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
 把这个服务端注册进一个支持 MCP 的客户端（其他 Code Agent 请根据文档进行配置 MCP Client）：
 
 - **Claude Code**：
-  ```
-  claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
-  ```
+```
+ claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
+```
 - **Codex**：
-  ```
+```
   codex mcp add toolmaker-agent --url http://127.0.0.1:8080/agtapi/v2/mcp
-  ```
+```
 - **DeepSeek Harness（DSH）**：借助 `@deepseek-ai/dsh-mcp-client` 插件，在 `$DSH_HOME/cordis.patch.yml`（对全部 profile 生效）或某个 profile 自己的 `$DSH_HOME/profiles/<name>/cordis.patch.yml` 里加一条配置：
-  ```yaml
+```yaml
   - id: mcp-toolmaker-agent
     name: '@deepseek-ai/dsh-mcp-client'
     config:
       serverName: toolmaker-agent
       transport: streamable-http
       url: http://127.0.0.1:8080/agtapi/v2/mcp
-  ```
+```
 
 ### 4.6. 开始使用
 
@@ -184,9 +182,10 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 
 ![MCP CRUD 演示](docs/images/mcp-crud-demo.gif)
 
+
 ## 6. 使用限制
 
-目前的版本为 Free Edition，只支持个人在本机使用，适合团队使用的版本正在开发中，随后会发布。
+目前的版本为 Free Edition, 只支持个人在本机使用，适合团队使用的版本正在开发中，随后会发布。
 
 ## 7. 技术栈
 
@@ -219,3 +218,13 @@ Apache License 2.0——详见 [LICENSE](./LICENSE)。
 - X: https://x.com/zhishi_io
 - Wechat Accounts: PHCP
 - Email: support@toolmaker.io
+
+## 10. Star 趋势
+
+[![Star History Chart](https://api.star-history.com/svg?repos=phcp-tech/toolmaker-agent&type=Date)](https://star-history.com/#phcp-tech/toolmaker-agent&Date)
+
+## 11. 发布文件下载量
+
+[![Downloads](https://img.shields.io/github/downloads/phcp-tech/toolmaker-agent/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://github.com/phcp-tech/toolmaker-agent/releases) [![Latest release downloads](https://img.shields.io/github/downloads/phcp-tech/toolmaker-agent/latest/total?label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/phcp-tech/toolmaker-agent/releases/latest)
+
+GitHub 上所有发布文件的累计下载次数。
