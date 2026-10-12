@@ -114,7 +114,7 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
 
 ### 4.4. （可选）配置向量化服务以启用语义检索
 
-如果还想启用 RAG/语义检索，去**设置 → Embedding**，配置一个向量化供应商（同样兼容 OpenAI 协议，比如 `Qwen text embedding`）。这是跟上面 LLM 配置完全独立的另一项设置。跳过这一步不会影响其他任何功能——Product/Feature/Requirement/Testcase/Defect/UML 的 CRUD、对话、MCP 全部照常可用，只是语义检索这一项用不了。
+如果还想启用 RAG/语义检索，去**设置 → Embedding**，配置一个向量化供应商（兼容 OpenAI 协议，目前支持 OpenAI、Gemini、Qwen、GLM、Ollama、LM Studio）。这是跟上面 LLM 配置完全独立的另一项设置。跳过这一步不会影响其他任何功能——Product/Feature/Requirement/Testcase/Defect/UML 的 CRUD、对话、MCP 全部照常可用，只是语义检索这一项用不了。
 
 ### 4.5. MCP 服务端
 
