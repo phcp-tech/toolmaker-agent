@@ -6,20 +6,44 @@
 
 <p align="center"><strong><em>We don't care what you build. We care how you build it.</em></strong></p>
 
+## Table of Contents
+
+- [1. What this is](#1-what-this-is)
+- [2. Problems Addressed](#2-problems-addressed)
+- [3. Key features](#3-key-features)
+- [4. Installation and Configuration](#4-installation-and-configuration)
+  - [4.1. Download](#41-download)
+  - [4.2. Install and run](#42-install-and-run)
+  - [4.3. Configure an LLM provider](#43-configure-an-llm-provider)
+  - [4.4. (Optional) Configure embeddings for semantic search](#44-optional-configure-embeddings-for-semantic-search)
+  - [4.5. MCP Server](#45-mcp-server)
+  - [4.6. Start using it](#46-start-using-it)
+  - [4.7. Semantic Search](#47-semantic-search)
+- [5. Three Ways to Manage Your Data](#5-three-ways-to-manage-your-data)
+  - [5.1. Manual — the web UI](#51-manual--the-web-ui)
+  - [5.2. LLM Chat — propose, confirm, done](#52-llm-chat--propose-confirm-done)
+  - [5.3. MCP — a coding agent driving the same data](#53-mcp--a-coding-agent-driving-the-same-data)
+- [6. Usage Limitations](#6-usage-limitations)
+- [7. Tech stack](#7-tech-stack)
+- [8. License](#8-license)
+- [9. Contact US](#9-contact-us)
+- [10. Star History](#10-star-history)
+- [11. Release Downloads](#11-release-downloads)
+
 ## 1. What this is
 
 Toolmaker Agent is an Agentic AI SDLC platform — humans and agents collaborate on the same structured data model.
 
-It ships as a single self-contained executable: a Go REST API with a layered architecture, SQLite storage, and a compiled React frontend embedded directly into the binary, for managing **Products, Features, Requirements, and UML/4+1-view system-design diagrams** — paired with an LLM-driven conversational agent and a MCP server for coding agents like Claude Code/Codex/DeepSeek Harness. Open one port and you get the full workbench — no separate frontend deployment, no external database to provision.
+It manages **Products, Features, Requirements, Test Cases, Defects, and UML/4+1-view system-design diagrams** as typed, queryable records, and you can work with them in three ways: a web UI, an LLM-driven conversational agent that turns a conversation into structured records, and an MCP server that lets coding agents like Claude Code/Codex/DeepSeek Harness read and write the same data directly. It ships as a single self-contained executable — a Go REST API with SQLite storage and the compiled React frontend embedded in the binary. Open one port and you get the full workbench — no separate frontend deployment, no external database to provision.
 
 ## 2. Problems Addressed
-Code agents and skill-based workflows today mostly produce their output as free-form Markdown files — a spec here, a plan there, an ADR somewhere else — scattered across whatever directory structure a project happens to have, with no schema tying them together and no way to query "every requirement related to X" beyond grep. Toolmaker Agent gives that output somewhere real to land: typed Product/Feature/Requirement/UML records with revisions, parent/child relationships, and semantic search — each addressable by a stable OID, not another markdown file dropped into a docs folder and disconnected from everything else.
+Code agents and skill-based workflows today mostly produce their output as free-form Markdown files — a spec here, a plan there, an ADR somewhere else — scattered across whatever directory structure a project happens to have, with no schema tying them together and no way to query "every requirement related to X" beyond grep. Toolmaker Agent gives that output somewhere real to land: typed Product/Feature/Requirement/Testcase/Defect/UML records with revisions, parent/child relationships, and semantic search — each addressable by a stable OID, not another markdown file dropped into a docs folder and disconnected from everything else.
 
 This is also why the data model itself follows the standard software engineering development process — Product, Feature, Requirement, and UML/system design map directly onto the classic stages of product definition, feature breakdown, requirements gathering, and architecture design, with the process still extending further from there. Each stage's output is saved as formatted, typed data rather than free-form text — so it can be reliably shared and reused across teammates, and across different agents, instead of becoming a private, one-off artifact nobody else can make sense of once that conversation or that agent's run is over.
 
 ## 3. Key features
 
-- **Product / Feature / Requirement / UML CRUD**, each with optimistic concurrency.
+- **Product / Feature / Requirement / Testcase / Defect / UML CRUD**, each with OIDs, revisions, and optimistic concurrency.
 
 - **4+1 system-design views** rendered as [Mermaid](https://mermaid.js.org/) diagrams. Any diagram can be exported as a **PNG or SVG** image. 7 diagram types are supported:
 
@@ -37,7 +61,7 @@ This is also why the data model itself follows the standard software engineering
 
   <sub>Note: `usecase-beta` is too new (shipped Sept 2026 with v12.0.0) for LLMs to have seen it — chat/MCP-generated use case diagrams often mix in PlantUML-style syntax errors. Writing/reviewing the script by hand in the UI is recommended.</sub>
 
-- **LLM chat agent** backed by [trpc-agent-go](https://github.com/trpc-group/trpc-agent-go), letting you talk a Product/Feature/Requirement/UML diagram into existence instead of filling out a form:
+- **LLM chat agent** backed by [trpc-agent-go](https://github.com/trpc-group/trpc-agent-go), letting you talk a Product/Feature/Requirement/Testcase/Defect/UML diagram into existence instead of filling out a form:
   - A propose-confirm tool-calling flow for every write, so the model never mutates data without a human in the loop.
   - Persisted, per-conversation history, automatically **summarized** once it grows past a threshold.
   - Pluggable multi-provider configuration — OpenAI, Anthropic, Gemini, DeepSeek, Ollama, LM Studio, Hunyuan, Moonshot AI.
@@ -89,7 +113,7 @@ If you'd rather not depend on any cloud service and run the model entirely on yo
 
 ### 4.4. (Optional) Configure embeddings for semantic search
 
-If you also want RAG/semantic search, go to **Settings → Embedding** and configure an embedding provider (also OpenAI-compatible, e.g. `Qwen text embedding`). This is a separate configuration from the LLM provider above. Skipping this step doesn't block anything else — Product/Feature/Requirement/UML CRUD, chat, and MCP all work fully without it; only semantic search stays unavailable.
+If you also want RAG/semantic search, go to **Settings → Embedding** and configure an embedding provider (also OpenAI-compatible, e.g. `Qwen text embedding`). This is a separate configuration from the LLM provider above. Skipping this step doesn't block anything else — Product/Feature/Requirement/Testcase/Defect/UML CRUD, chat, and MCP all work fully without it; only semantic search stays unavailable.
 
 ### 4.5. MCP Server
 
@@ -132,11 +156,11 @@ Three ways to reach the same underlying vector index, each scoped differently:
 | MCP tool | One product, via required `productOid` | Same handler logic as the chat tool |
 | /search API | Every product in the org by default; optional `productOid` narrows to one | Backs the header search box; results include `productOid` since a hit can come from any product |
 
-All three return each hit's kind (`product`/`feature`/`requirement`/`uml`), OID, name, and a relevance score — use that OID to pull up the full entity afterward, via the matching query call or its detail panel.
+All three return each hit's kind (`product`/`feature`/`requirement`/`testcase`/`defect`/`uml`), OID, name, and a relevance score — use that OID to pull up the full entity afterward, via the matching query call or its detail panel.
 
 ## 5. Three Ways to Manage Your Data
 
-Every entity in Toolmaker Agent — Product, Feature, Requirement, UML diagram — can be created, updated, and deleted through three independent front doors, all backed by the same service layer and the same database. Pick whichever fits the moment: fill out a form, describe what you want in plain language, or let a coding agent do it for you.
+Every entity in Toolmaker Agent — Product, Feature, Requirement, Testcase, Defect, UML diagram — can be created, updated, and deleted through three independent front doors, all backed by the same service layer and the same database. Pick whichever fits the moment: fill out a form, describe what you want in plain language, or let a coding agent do it for you.
 
 ### 5.1. Manual — the web UI
 
@@ -216,6 +240,7 @@ Apache License 2.0 — see [LICENSE](./LICENSE).
 - Discord: https://discord.com/invite/jFhTM3df75
 - X: https://x.com/zhishi_io
 - Wechat Accounts: PHCP
+- QQ Group: 470402724
 - Email: support@toolmaker.io
 
 ## 10. Star History
