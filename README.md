@@ -113,7 +113,7 @@ If you'd rather not depend on any cloud service and run the model entirely on yo
 
 ### 4.4. (Optional) Configure embeddings for semantic search
 
-If you also want RAG/semantic search, go to **Settings → Embedding** and configure an embedding provider (also OpenAI-compatible, e.g. `Qwen text embedding`). This is a separate configuration from the LLM provider above. Skipping this step doesn't block anything else — Product/Feature/Requirement/Testcase/Defect/UML CRUD, chat, and MCP all work fully without it; only semantic search stays unavailable.
+If you also want RAG/semantic search, go to **Settings → Embedding** and configure an embedding provider (OpenAI-compatible, now support OpenAI, Gemini, Qwen, GLM, Ollama, LM Studio). This is a separate configuration from the LLM provider above. Skipping this step doesn't block anything else — Product/Feature/Requirement/Testcase/Defect/UML CRUD, chat, and MCP all work fully without it; only semantic search stays unavailable.
 
 ### 4.5. MCP Server
 
