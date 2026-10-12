@@ -239,7 +239,7 @@ Apache License 2.0——详见 [LICENSE](./LICENSE)。
 
 - Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
 - Wechat Accounts: PHCP
-- QQ Group: 470402724
+- QQ Group: 150129626
 - Discord: https://discord.com/invite/jFhTM3df75
 - X: https://x.com/zhishi_io
 - Email: support@toolmaker.io

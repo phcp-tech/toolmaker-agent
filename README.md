@@ -240,7 +240,7 @@ Apache License 2.0 — see [LICENSE](./LICENSE).
 - Discord: https://discord.com/invite/jFhTM3df75
 - X: https://x.com/zhishi_io
 - Wechat Accounts: PHCP
-- QQ Group: 470402724
+- QQ Group: 150129626
 - Email: support@toolmaker.io
 
 ## 10. Star History
