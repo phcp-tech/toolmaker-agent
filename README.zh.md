@@ -239,9 +239,3 @@ Apache License 2.0——详见 [LICENSE](./LICENSE)。
 ## 10. Star 趋势
 
 [![Star History Chart](https://api.star-history.com/svg?repos=phcp-tech/toolmaker-agent&type=Date)](https://star-history.com/#phcp-tech/toolmaker-agent&Date)
-
-## 11. 发布文件下载量
-
-[![Downloads](https://img.shields.io/github/downloads/phcp-tech/toolmaker-agent/total?label=%E6%80%BB%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://github.com/phcp-tech/toolmaker-agent/releases) [![Latest release downloads](https://img.shields.io/github/downloads/phcp-tech/toolmaker-agent/latest/total?label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/phcp-tech/toolmaker-agent/releases/latest)
-
-GitHub 上所有发布文件的累计下载次数。
