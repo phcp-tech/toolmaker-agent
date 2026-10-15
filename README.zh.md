@@ -98,13 +98,7 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
   ./toolmaker-agent-linux-amd64
   ```
 
-首次启动会自动建好 SQLite 数据库（不需要手工执行任何建表步骤），默认监听 `http://localhost:8080`。它的配置/数据库/日志存放在一个跟可执行文件所在目录无关的、全机器共享的目录里——所以从不同目录跑多份、或者升级到新版本二进制，读写的都是同一份数据：
-
-| 平台 | 数据目录 |
-|---|---|
-| Windows | `%ProgramData%\phcp\toolmaker-agent` |
-| macOS | `/Library/Application Support/phcp/toolmaker-agent` |
-| Linux | `/var/lib/phcp/toolmaker-agent` |
+首次启动会自动建好 SQLite 数据库（不需要手工执行任何建表步骤），默认监听 `http://localhost:8080`。
 
 ### 4.3. 配置 LLM 供应商
 
@@ -144,7 +138,6 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
 2. 在它下面新建 **Feature** 和 **Requirement**——手动操作、用对话、或者用 MCP。
 3. 打开**系统设计**，给某个 4+1 视图新建一张 **UML** 图。
 
-这就是本次发布覆盖的完整核心流程。
 
 ### 4.7. 语义检索
 
@@ -215,7 +208,7 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 
 | 层 | 技术 |
 |---|---|
-| 后端语言/运行时 | Go 1.26 |
+| 后端语言/运行时 | Go 1.27.1 |
 | 公共库 common-library-golang |https://github.com/phcp-tech/common-library-golang | 
 | HTTP 框架 | [Gin](https://github.com/gin-gonic/gin) |
 | 数据库 | 通过 [dbsqlx](https://github.com/vinovest/sqlx) 使用 SQLite（原生 SQL，无 ORM）；schema 定义在 `config/schema_sqlite.sql` 中并据此建库 |
@@ -239,7 +232,6 @@ Apache License 2.0——详见 [LICENSE](./LICENSE)。
 
 - Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
 - Wechat Accounts: PHCP
-- QQ Group: 150129626
 - Discord: https://discord.com/invite/jFhTM3df75
 - X: https://x.com/zhishi_io
 - Email: support@toolmaker.io

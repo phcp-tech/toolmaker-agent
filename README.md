@@ -97,13 +97,7 @@ The binary is fully self-contained (frontend included) — drop it in any direct
   ./toolmaker-agent-linux-amd64
   ```
 
-On first launch it creates its SQLite database automatically (no manual schema step) and starts listening on `http://localhost:8080` by default. Its config/database/logs live in a machine-wide directory, separate from wherever you placed the binary — so running multiple copies from different folders, or upgrading to a newer binary, all share the same data:
-
-| Platform | Data directory |
-|---|---|
-| Windows | `%ProgramData%\phcp\toolmaker-agent` |
-| macOS | `/Library/Application Support/phcp/toolmaker-agent` |
-| Linux | `/var/lib/phcp/toolmaker-agent` |
+On first launch it creates its SQLite database automatically (no manual schema step) and starts listening on `http://localhost:8080` by default. 
 
 ### 4.3. Configure an LLM provider
 
@@ -143,8 +137,6 @@ Register the server with an MCP-aware client (For other Code Agents, please conf
 1. Create a **Product**.
 2. Add **Features** and **Requirements** under it — manually, via chat, or via MCP.
 3. Open **System Design** and add a **UML** diagram for one of the 4+1 views.
-
-That's the full core workflow this release covers.
 
 ### 4.7. Semantic Search
 
@@ -214,7 +206,7 @@ The current version is the Free Edition, which supports only individual use on a
 
 | Layer | Technology |
 |---|---|
-| Backend language/runtime | Go 1.26 |
+| Backend language/runtime | Go 1.27.1 |
 | common-library-golang |https://github.com/phcp-tech/common-library-golang | 
 | HTTP framework | [Gin](https://github.com/gin-gonic/gin) |
 | Database | SQLite via [dbsqlx](https://github.com/vinovest/sqlx) (raw SQL, no ORM); schema applied from `config/schema_sqlite.sql` |
@@ -240,7 +232,6 @@ Apache License 2.0 — see [LICENSE](./LICENSE).
 - Discord: https://discord.com/invite/jFhTM3df75
 - X: https://x.com/zhishi_io
 - Wechat Accounts: PHCP
-- QQ Group: 150129626
 - Email: support@toolmaker.io
 
 ## 10. Star History
