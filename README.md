@@ -28,7 +28,6 @@
 - [8. License](#8-license)
 - [9. Contact US](#9-contact-us)
 - [10. Star History](#10-star-history)
-- [11. Release Downloads](#11-release-downloads)
 
 ## 1. What this is
 
