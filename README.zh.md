@@ -4,7 +4,7 @@
   <a href="./README.md">English</a> | <a href="./README.zh.md">简体中文</a>
 </p>
 
-<p align="center"><strong><em>我们不关心你构建什么，我们关心你如何构建它。</em></strong></p>
+<p align="center"><strong><em>我们不关注你构建什么，我们关注你如何构建它。</em></strong></p>
 
 ## 目录
 
