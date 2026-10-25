@@ -25,9 +25,8 @@
   - [5.3. MCP — a coding agent driving the same data](#53-mcp--a-coding-agent-driving-the-same-data)
 - [6. Usage Limitations](#6-usage-limitations)
 - [7. Tech stack](#7-tech-stack)
-- [8. License](#8-license)
-- [9. Contact US](#9-contact-us)
-- [10. Star History](#10-star-history)
+- [8. Contact US](#9-contact-us)
+- [9. Star History](#10-star-history)
 
 ## 1. What this is
 
@@ -221,11 +220,7 @@ The current version is the Free Edition, which supports only individual use on a
 | Styling | Tailwind CSS |
 | Diagrams | [Mermaid](https://mermaid.js.org/) (+ Cytoscape, KaTeX for advanced diagram types) |
 
-## 8. License
-
-Apache License 2.0 — see [LICENSE](./LICENSE).
-
-## 9. Contact US
+## 8. Contact US
 
 - Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
 - Discord: https://discord.com/invite/jFhTM3df75
@@ -233,6 +228,6 @@ Apache License 2.0 — see [LICENSE](./LICENSE).
 - Wechat Accounts: PHCP
 - Email: support@toolmaker.io
 
-## 10. Star History
+## 9. Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=phcp-tech/toolmaker-agent&type=Date)](https://star-history.com/#phcp-tech/toolmaker-agent&Date)
