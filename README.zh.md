@@ -25,9 +25,8 @@
   - [5.3. MCP——让编码智能体直接操作同一份数据](#53-mcp让编码智能体直接操作同一份数据)
 - [6. 使用限制](#6-使用限制)
 - [7. 技术栈](#7-技术栈)
-- [8. 许可证](#8-许可证)
-- [9. 联系我们](#9-联系我们)
-- [10. Star 趋势](#10-star-趋势)
+- [8. 联系我们](#9-联系我们)
+- [9. Star 趋势](#10-star-趋势)
 
 ## 1. 这是什么
 
@@ -223,11 +222,7 @@ Claude Code 会按名称解析出这个 Feature，调用工具，带上它从这
 | 样式 | Tailwind CSS |
 | 图表 | [Mermaid](https://mermaid.js.org/)（部分高级图表类型还用到 Cytoscape、KaTeX） |
 
-## 8. 许可证
-
-Apache License 2.0——详见 [LICENSE](./LICENSE)。
-
-## 9. 联系我们
+## 8. 联系我们
 
 - Github Issues: https://github.com/phcp-tech/toolmaker-agent/issues
 - Wechat Accounts: PHCP
@@ -235,6 +230,6 @@ Apache License 2.0——详见 [LICENSE](./LICENSE)。
 - X: https://x.com/zhishi_io
 - Email: support@toolmaker.io
 
-## 10. Star 趋势
+## 9. Star 趋势
 
 [![Star History Chart](https://api.star-history.com/svg?repos=phcp-tech/toolmaker-agent&type=Date)](https://star-history.com/#phcp-tech/toolmaker-agent&Date)
