@@ -25,8 +25,8 @@
   - [5.3. MCP — a coding agent driving the same data](#53-mcp--a-coding-agent-driving-the-same-data)
 - [6. Usage Limitations](#6-usage-limitations)
 - [7. Tech stack](#7-tech-stack)
-- [8. Contact US](#9-contact-us)
-- [9. Star History](#10-star-history)
+- [8. Contact US](#8-contact-us)
+- [9. Star History](#9-star-history)
 
 ## 1. What this is
 
