@@ -96,11 +96,11 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
   ./toolmaker-agent-linux-amd64
   ```
 
-首次启动会自动建好 SQLite 数据库（不需要手工执行任何建表步骤），默认监听 `http://localhost:8080`。
+首次启动会自动建好 SQLite 数据库（不需要手工执行任何建表步骤），默认监听 `http://localhost:28080`。
 
 ### 4.3. 配置 LLM 供应商
 
-打开 `http://localhost:8080`，进入**设置 → LLM**。新增一条供应商配置——从内置选项（OpenAI、Anthropic、Gemini、DeepSeek、Ollama、LM Studio、混元、Moonshot AI、Qwen、GLM、MiniMax）里选一个，或者选 **自定义（兼容 OpenAI）** 来接入其他任何遵循 OpenAI 协议的服务——填入模型名和相应凭证，保存并设为启用，这一步是对话智能体和所有工具调用功能能正常工作的前提。
+打开 `http://localhost:28080`，进入**设置 → LLM**。新增一条供应商配置——从内置选项（OpenAI、Anthropic、Gemini、DeepSeek、Ollama、LM Studio、混元、Moonshot AI、Qwen、GLM、MiniMax）里选一个，或者选 **自定义（兼容 OpenAI）** 来接入其他任何遵循 OpenAI 协议的服务——填入模型名和相应凭证，保存并设为启用，这一步是对话智能体和所有工具调用功能能正常工作的前提。
 
 如果不想依赖任何云端服务、希望模型完全跑在本机——选 **Ollama** 或 **LM Studio** 即可：两者都是本地运行的模型服务器，不需要 API Key，按各自文档在本机装好、跑起来之后，把 Base URL 指向本机地址就行（Ollama 默认是 `http://localhost:11434`，LM Studio 默认是 `http://localhost:1234/v1`）。这意味着聊天、工具调用、MCP 这些功能都可以完全离线运行，不需要把任何数据发到公网上的第三方服务。
 
@@ -114,11 +114,11 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
 
 - **Claude Code**：
 ```
- claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
+ claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:28080/agtapi/v2/mcp
 ```
 - **Codex**：
 ```
-  codex mcp add toolmaker-agent --url http://127.0.0.1:8080/agtapi/v2/mcp
+  codex mcp add toolmaker-agent --url http://127.0.0.1:28080/agtapi/v2/mcp
 ```
 - **DeepSeek Harness（DSH）**：借助 `@deepseek-ai/dsh-mcp-client` 插件，在 `$DSH_HOME/cordis.patch.yml`（对全部 profile 生效）或某个 profile 自己的 `$DSH_HOME/profiles/<name>/cordis.patch.yml` 里加一条配置：
 ```yaml
@@ -127,7 +127,7 @@ Toolmaker Agent 以六份预编译、自包含的二进制文件发布——每�
     config:
       serverName: toolmaker-agent
       transport: streamable-http
-      url: http://127.0.0.1:8080/agtapi/v2/mcp
+      url: http://127.0.0.1:28080/agtapi/v2/mcp
 ```
 
 ### 4.6. 开始使用

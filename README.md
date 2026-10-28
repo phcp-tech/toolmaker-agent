@@ -95,11 +95,11 @@ The binary is fully self-contained (frontend included) — drop it in any direct
   ./toolmaker-agent-linux-amd64
   ```
 
-On first launch it creates its SQLite database automatically (no manual schema step) and starts listening on `http://localhost:8080` by default. 
+On first launch it creates its SQLite database automatically (no manual schema step) and starts listening on `http://localhost:28080` by default. 
 
 ### 4.3. Configure an LLM provider
 
-Open `http://localhost:8080` and go to **Settings → LLM**. Add a provider entry — pick one of the built-in options (OpenAI, Anthropic, Gemini, DeepSeek, Ollama, LM Studio, Hunyuan, Moonshot AI, Qwen, GLM, MiniMax) or **Custom (OpenAI-compatible)** for anything else that speaks the OpenAI wire protocol — fill in the model name and its credentials, save, and mark it active, this step is required before the chat agent or any tool-calling feature will work.
+Open `http://localhost:28080` and go to **Settings → LLM**. Add a provider entry — pick one of the built-in options (OpenAI, Anthropic, Gemini, DeepSeek, Ollama, LM Studio, Hunyuan, Moonshot AI, Qwen, GLM, MiniMax) or **Custom (OpenAI-compatible)** for anything else that speaks the OpenAI wire protocol — fill in the model name and its credentials, save, and mark it active, this step is required before the chat agent or any tool-calling feature will work.
 
 If you'd rather not depend on any cloud service and run the model entirely on your own machine, pick **Ollama** or **LM Studio** — both are local model servers that need no API key; install and start either per its own docs, then point Base URL at your local instance (`http://localhost:11434` for Ollama's default, `http://localhost:1234/v1` for LM Studio's). That makes chat, tool calling, and MCP all work fully offline, with no data ever leaving your machine.
 
@@ -113,11 +113,11 @@ Register the server with an MCP-aware client (For other Code Agents, please conf
 
 - **Claude Code**:
   ```
-  claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:8080/agtapi/v2/mcp
+  claude mcp add --scope user --transport http toolmaker-agent http://127.0.0.1:28080/agtapi/v2/mcp
   ```
 - **Codex**:
   ```
-  codex mcp add toolmaker-agent --url http://127.0.0.1:8080/agtapi/v2/mcp
+  codex mcp add toolmaker-agent --url http://127.0.0.1:28080/agtapi/v2/mcp
   ```
 - **DeepSeek Harness (DSH)**: add an entry to `$DSH_HOME/cordis.patch.yml` (or a single profile's `$DSH_HOME/profiles/<name>/cordis.patch.yml`), using the
  [`@deepseek-ai/dsh-mcp-client`](https://github.com/deepseek-ai/deepseek-harness/blob/main/packages/mcp/mcp-client/README.md) plugin:
@@ -127,7 +127,7 @@ Register the server with an MCP-aware client (For other Code Agents, please conf
     config:
       serverName: toolmaker-agent
       transport: streamable-http
-      url: http://127.0.0.1:8080/agtapi/v2/mcp
+      url: http://127.0.0.1:28080/agtapi/v2/mcp
   ```
 
 ### 4.6. Start using it
